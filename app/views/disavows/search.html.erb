@@ -1,0 +1,20 @@
+<%= content_for(:title, "Search for an API Record")%>
+
+<div align="center">
+	<h1>API Records</h1>
+	<p>Enter the name of a business to search the API database</p>
+
+	<%= form_tag "/disavows/search_result" do %>
+		<div align="center">
+		<%= text_field_tag :business_name, nil, placeholder:"Business Name" %>
+		</div>
+	<% end %>
+</div>
+
+<div>
+	<% @search_results.to_a.each do |e| %>
+		 <%= "#{e["business_name"]}, #{e["website"]}, #{e["industry"]}" %> 
+		 <%= link_to "select", add_path(id: e["id"]) %> 
+		 <br>
+	 <% end %>
+</div>

@@ -1,0 +1,26 @@
+<%= content_for(:title, "All Disavows")%>
+<div align="center">
+	<h1>Disavows</h1>
+</div>
+
+
+<table>
+	<tr>
+		<td>Company name</td>
+		<td>Website URL</td>
+		<td>Industry</td>
+		<td>Date Cancelled</td>
+	</tr>
+		<% @record_business_details.each do |e| %>
+		<tr>
+			<td> <%= "#{e[0]}" %> </td> 
+			<td> <%= "#{e[1]}" %> </td> 
+			<td> <%= "#{e[2]}" %> </td>  
+		</tr>
+	 	<% end %>
+	 	<br>
+<table>
+	
+<div>
+	<%= link_to "Add New Record", search_path, :class => "button" %>
+</div>

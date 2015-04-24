@@ -1,0 +1,8 @@
+<%= content_for(:title, "Disavow Record")%>
+
+<%= form_for @disavow, url:"/disavows/#{@disavow.id}" do %>
+	<%= @disavow.date_cancelled %>
+<% end %>
+
+<%= link_to "Back to Index", root_path, :class => "button" %>
+<%= link_to "Delete Record", destroy_path, :class => "delete_button" %>

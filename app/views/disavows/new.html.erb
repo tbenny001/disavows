@@ -1,0 +1,18 @@
+<%= content_for(:title, "Add a Disavow")%>
+<% @errors.to_a.each do |e| %>
+	<div><%= e %></div>	
+<% end %>
+<%= form_for @disavow, url:"/disavows/new" do |f| %>
+
+	<p> <%= @search_result["business_name"] %> </p>
+
+	<p> <%= @search_result["website"] %> </p>
+
+	<p> <%= @search_result["industry"] %> </p>
+
+	<%= f.hidden_field(:api_record_id, value: @search_result["id"]) %>
+
+	<%= f.date_field(:date_cancelled, value: @current_date) %>
+
+	<%= f.submit "Add Disavow", :class => "button" %>
+<% end %>

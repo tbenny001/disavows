@@ -1,0 +1,6 @@
+<%= content_for(:title, "Nokogiri Testing")%>
+
+<%= form_for @website_meta_text, url:"/test" do |f| %>
+	<p> <%= @website_title_text %> </p>
+	<p> <%= @website_meta_text %> </p>
+<% end %>
